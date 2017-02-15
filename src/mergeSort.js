@@ -25,5 +25,3 @@ var merge = function(left, right) {
   }
   return finalArray
 }
-
-console.log(mergeSort( [8, 26, 12, 17, 23, 27, 30, 7] ))
