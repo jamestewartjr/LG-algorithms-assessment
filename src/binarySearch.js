@@ -1,8 +1,22 @@
-export default function BinarySearch(inputArray, searchValue){
-  // make sure to sort the array
-  // split it in half
-  // since it is split find whether the value would be larger or smaller than go to that side of the array
-  // recurse by spliting and searching
-  // return the value
-  return searchValue
+const BinarySearch = (inputArray, searchValue) => {
+  let max = inputArray.length - 1
+  let min = 0
+  while (min <= max) {
+    let middle = (min + max) / 2
+    if(inputArray[middle] === searchValue) {
+      return middle
+    }
+    else {
+      if( inputArray[middle] < searchValue) {
+        min = inputArray[middle]
+      }
+      else {
+        max = inputArray[middle]
+      }
+    }
+  }
+
+  return -1
 }
+
+export default BinarySearch
