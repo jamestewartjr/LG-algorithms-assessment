@@ -1,15 +1,16 @@
-export default function mergeSort(inputArray){
-  var middle = inputArray.length / 2
-  var left = inputArray.slice(0, middle)
-  var right = inputArray.slice(middle, inputArray.length)
-  if( inputArray.length < 2) return inputArray
-
+const mergeSort = (inputArray) => {
+  const middle = inputArray.length / 2
+  const left = inputArray.slice(0, middle)
+  const right = inputArray.slice(middle, inputArray.length)
+  if( inputArray.length < 2) {
+    return inputArray
+  }
   return merge(mergeSort(left), mergeSort(right))
 
 }
 
-var merge = function(left, right) {
-  var finalArray = []
+const merge = (left, right) => {
+  const finalArray = []
   while(left.length || right.length){
     if(left.length && right.length){
       if(left[0] < right[0]) {
@@ -25,3 +26,5 @@ var merge = function(left, right) {
   }
   return finalArray
 }
+
+export default mergeSort
