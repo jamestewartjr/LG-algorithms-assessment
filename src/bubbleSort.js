@@ -1,5 +1,8 @@
-export default function bubbleSort(inputArray){
+const bubbleSort = (inputArray) => {
   let sorting = false
+  if( inputArray.length < 2) {
+    return inputArray
+  }
   for(let index = 0; index < inputArray.length; index ++) {
     let currentValue = inputArray[index]
     let nextValue = inputArray[index+1]
@@ -10,6 +13,10 @@ export default function bubbleSort(inputArray){
     }
   }
 
-  if(sorting) bubbleSort(inputArray)
+  if(sorting) {
+    bubbleSort(inputArray)
+  }
   return inputArray
 }
+
+export default bubbleSort
