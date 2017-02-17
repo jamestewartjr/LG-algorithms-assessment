@@ -1,7 +1,7 @@
 import chai, { expect } from 'chai'
 import binarySearch from '../src/binarySearch'
 
-describe.only('binarySearch()', () => {
+describe('binarySearch()', () => {
   it('is a function that exists', () => {
     expect(binarySearch([1], 1  )).to.exist
   })
