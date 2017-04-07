@@ -1,3 +1,5 @@
+
+
 const points = [ [2,1], [4,0], [-1,0], [5,3], [-2,5], [3,-3], [-2,0], [3,4], [5,-4], [0,-2] ]
 
 let graph = (vertix) => {
@@ -25,10 +27,10 @@ const addEdge = (hortizonalValue, verticalValue) => {
 
 const showGraph = () => {
   for(let graphVal = 0; graphVal < this.vertices; graphVal++) {
-    putstr(graphVal + " -> ")
+    // putstr(graphVal + " -> ")
     for(let i = 0; i < this.vertices; i++){
       if(this.adjacent[graphVal][i] != undefined)
-        putstr(this.adjacent[graphVal][i] + ' ')
+        this.adjacent[graphVal][i]
     }
     console.log()
   }
@@ -40,19 +42,19 @@ const depthFirstSearch = (vertices) => {
     console.log('visited vertex:::::  ' + vertices)
   }
   for (let point in this.adjacent[vertices]) {
-    if(!this.marked(point) ){
+    if(!this.marked[point] ){
       this.depthFirstSearch(point)
     }
   }
 }
 
 let g = graph(5)
-g.addEdge(0,1)
-g.addEdge(0,2)
-g.addEdge(1,3)
-g.addEdge(2,4)
-g.showGraph()
-g.depthFirstSearch(0)
+addEdge(0,1)
+addEdge(0,2)
+addEdge(1,3)
+addEdge(2,4)
+showGraph()
+depthFirstSearch(0)
 
 const closestPair = (points) => {
   return points
